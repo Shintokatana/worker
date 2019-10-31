@@ -1,0 +1,37 @@
+html, body, #app, .dashboard-container {
+	min-height: 100vh;
+}
+
+$accent_color: #42b883;
+$accent_hover_color: #35495e;
+$color_white: #ffffff;
+
+a {
+	color: $accent_color;
+	text-decoration: none;
+	transition: .4s ease all;
+	cursor: pointer;
+	&:hover {
+		color: $accent_hover_color;
+	}
+}
+
+.btn {
+	background-color: $accent_color;
+	color: $color_white;
+	transition: .4s ease all;
+	padding: 7px 15px;
+	border-radius: 15px;
+	display: inline-block;
+
+	&:hover {
+		color: $color_white;
+		background-color: $accent_hover_color;
+	}
+}
+
+.entry-content {
+	padding: 45px;
+}
+
+@import "table";

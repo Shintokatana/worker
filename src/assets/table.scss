@@ -1,0 +1,72 @@
+table {
+	&.VueTables__table {
+		*:focus {
+			outline: none;
+		}
+
+		border-spacing: 0;
+		margin-top: 10px;
+		border-radius: 15px;
+		padding: 10px;
+		border: 1px solid #eee;
+		width: 100%;
+
+		td,
+		th {
+			padding: 10px;
+			text-align: left;
+
+		}
+
+		tbody {
+			tr {
+				border-radius: 15px;
+				transition: .4s ease all;
+
+				&:hover {
+					background-color: #eee;
+				}
+			}
+		}
+	}
+}
+
+.VuePagination {
+
+	nav {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	.pagination.VuePagination__pagination {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		padding: 0;
+
+		.VuePagination__pagination-item {
+			transition: .4s ease all;
+			background-color: $accent_color;
+
+			a {
+				display: inline-block;
+				padding: 6px 10px;
+				color: white;
+				border-radius: 15px;
+			}
+
+			margin: 3px;
+			border-radius: 15px;
+
+			&:hover {
+				a {
+					color: white;
+				}
+
+				background-color: $accent_hover_color;
+			}
+		}
+	}
+}
+
