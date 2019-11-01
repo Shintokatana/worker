@@ -14,6 +14,10 @@ a {
 	&:hover {
 		color: $accent_hover_color;
 	}
+	&:active,
+	&:focus {
+		outline: none;
+	}
 }
 
 .btn {
@@ -32,6 +36,9 @@ a {
 
 .entry-content {
 	padding: 45px;
+	@media (max-width: 767px) {
+		padding: 15px;
+	}
 }
 
 @import "table";

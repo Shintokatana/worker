@@ -10,8 +10,6 @@ require('@/assets/assets.scss');
 import {ClientTable} from 'vue-tables-2';
 Vue.use(ClientTable);
 
-Vue.config.productionTip = false;
-
 let app = '';
 
 if (!app) {

@@ -1,5 +1,18 @@
 table {
 	&.VueTables__table {
+		@media (max-width: 767px) {
+			border-collapse: collapse;
+			tr {
+				border: 1px solid #eee;
+				border-radius: 15px;
+				display: block;
+				margin: 8px;
+			}
+			td {
+				display: block;
+			}
+		}
+
 		*:focus {
 			outline: none;
 		}
@@ -48,6 +61,20 @@ table {
 		.VuePagination__pagination-item {
 			transition: .4s ease all;
 			background-color: $accent_color;
+
+			&.active {
+				background-color: $accent_hover_color;
+			}
+
+			&.disabled {
+				&:hover {
+					background-color: #eeeeee;
+				}
+				a {
+					cursor: not-allowed;
+				}
+				background-color: #eeeeee;
+			}
 
 			a {
 				display: inline-block;

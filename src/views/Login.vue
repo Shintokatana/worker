@@ -2,13 +2,13 @@
     <div class="login-page">
         <h1 class="login-title">Sign In</h1>
         <form class="login-form">
-            <label for="login">
-                <input type="text" id="login" placeholder="Login" v-model="login">
+            <label for="email">
+                <input type="email" id="email" placeholder="Email" v-model="email">
             </label>
             <label for="password">
                 <input type="password" id="password" placeholder="Password" v-model="password">
             </label>
-            <input type="submit" value="Login" @click.prevent="pushHome">
+            <input type="submit" value="Login" @click.prevent="loginUser">
         </form>
     </div>
 </template>
@@ -18,12 +18,12 @@
         name: "Login",
         data() {
             return {
-                login: '',
+                email: '',
                 password: ''
             }
         },
         methods: {
-            pushHome: function () {
+            loginUser: function () {
                 this.$store.dispatch('authUser', true)
                     .then(() => {
                         this.$router.push('/');
