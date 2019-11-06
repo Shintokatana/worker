@@ -3,10 +3,10 @@
         <h1 class="login-title">Sign In</h1>
         <form class="login-form">
             <label for="email">
-                <input type="email" id="email" placeholder="Email" v-model="email">
+                <input type="email" id="email" placeholder="Email" v-model="userInfo.email">
             </label>
             <label for="password">
-                <input type="password" id="password" placeholder="Password" v-model="password">
+                <input type="password" id="password" placeholder="Password" v-model="userInfo.password">
             </label>
             <input type="submit" value="Login" @click.prevent="loginUser">
         </form>
@@ -14,17 +14,22 @@
 </template>
 
 <script>
+    // import axios from 'axios'
+    // import {workerAPIEndpoints} from '@/config'
+
     export default {
         name: "Login",
         data() {
             return {
-                email: '',
-                password: ''
+                userInfo: {
+                    email: '',
+                    password: ''
+                },
             }
         },
         methods: {
             loginUser: function () {
-                this.$store.dispatch('authUser', true)
+                this.$store.dispatch('loginUser', true)
                     .then(() => {
                         this.$router.push('/');
                     });
@@ -38,6 +43,7 @@
     .login-title {
         text-align: center;
     }
+
     .login-form {
         max-width: 400px;
         margin: 0 auto;

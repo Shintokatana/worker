@@ -6,7 +6,7 @@
                     <h2 class="modal-title">Confirm Deletion</h2>
                     <p class="modal-text">Are you sure you want to delete this user?</p>
                     <div class="modal-buttons">
-                        <a class="btn" @click.prevent="closeModal">close</a>
+                        <a class="btn" @click.prevent="closeModal">Close</a>
                         <a class="btn" @click.prevent="deleteUser">Delete</a>
                     </div>
                 </div>
@@ -21,10 +21,10 @@
         props: ['id'],
         methods: {
             deleteUser: function () {
-                this.$emit('close');
+                this.$emit('close')
             },
             closeModal: function () {
-                this.$emit('closeDelete');
+                this.$emit('closeDelete')
             }
         }
     }

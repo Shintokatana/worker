@@ -1,5 +1,5 @@
 export default {
-    authUser(state, payload) {
+    authStatusChange(state, payload) {
         state.isAuth = payload;
     }
 }

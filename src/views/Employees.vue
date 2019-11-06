@@ -28,6 +28,7 @@
                 {
                     "id": 1,
                     "name": "Testing1",
+                    "category": "Category 12",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -36,6 +37,7 @@
                 }, {
                     "id": 2,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -44,6 +46,7 @@
                 }, {
                     "id": 3,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -52,6 +55,7 @@
                 }, {
                     "id": 4,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -60,6 +64,7 @@
                 }, {
                     "id": 5,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -68,6 +73,7 @@
                 }, {
                     "id": 6,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -76,6 +82,7 @@
                 }, {
                     "id": 7,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -84,6 +91,7 @@
                 }, {
                     "id": 8,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -92,6 +100,7 @@
                 }, {
                     "id": 9,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -100,6 +109,7 @@
                 }, {
                     "id": 10,
                     "name": "Testing1",
+                    "category": "Category 2",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -108,6 +118,7 @@
                 }, {
                     "id": 11,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -116,6 +127,7 @@
                 }, {
                     "id": 12,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",
@@ -124,6 +136,7 @@
                 }, {
                     "id": 13,
                     "name": "Testing1",
+                    "category": "Category 1",
                     "email": "email1@email.com",
                     "email_verified_at": null,
                     "role_id": "3",

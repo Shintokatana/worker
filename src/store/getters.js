@@ -1,5 +1,5 @@
 export default {
-    getAuth: state => {
-        return state.isAuth
+    getUsers: state => {
+        return state.users
     }
 }

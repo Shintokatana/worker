@@ -4,6 +4,7 @@ import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
 import VuexPersist from 'vuex-persist'
+import Cookie from 'js-cookie'
 
 const vuexPersist = new VuexPersist({
     key: 'worker-app',
@@ -14,7 +15,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        isAuth: false
+        user: {},
+        isAuth: Cookie.get('authToken'),
+        users: {}
     },
     mutations: mutations,
     actions: actions,

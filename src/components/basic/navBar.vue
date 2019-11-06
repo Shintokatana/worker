@@ -13,14 +13,17 @@
         name: "nav-bar",
         methods: {
             signOut: function () {
-                this.$store.dispatch('authUser', false)
+                // this.$store.commit('authUser', {});
+                // this.$router.push('/login');
+                this.$store.dispatch('logoutUser', false)
                     .then(() => {
-                        this.$router.push('/login');
-                    })
+                            this.$router.push('/login');
+                        }
+                    )
             },
             toggleBar() {
                 if (window.innerWidth < 767)
-                this.$emit('toggleNavBar')
+                    this.$emit('toggleNavBar')
             }
         }
     }
@@ -32,10 +35,20 @@
         text-align: left;
 
         .home-navigation {
-            &.router-link-exact-active {
-                background-color: white;
+            background-color: white;
+
+            a {
+                color: #35495e;
             }
+
+            &.router-link-exact-active {
+                a {
+                    color: #42b883;
+                }
+            }
+
             display: block;
+
             h2 {
                 padding: 25px 15px;
                 margin: 0;

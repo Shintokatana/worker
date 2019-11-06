@@ -34,16 +34,17 @@
                 this.deleteUserId = id;
                 this.modalView = true;
             },
+            userDeleteCancel: function () {
+                this.modalView = false;
+            },
             userDelete: function (id) {
+                //implement api call to delete user
                 this.users.splice(this.users.map(x => {
                     return x.id
                 }).indexOf(id), 1);
                 this.modalView = false;
             },
-            userDeleteCancel: function () {
-                this.modalView = false;
-            }
-        },
+        }
     }
 </script>
 
