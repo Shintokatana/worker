@@ -11,10 +11,7 @@ export default {
     },
 
     loginUser({commit}, payload) {
-        if (Cookie.get('authToken')) {
-            Cookie.remove('authToken');
-        }
-        //Get From payload token
+        //Get token from payload
         Cookie.set('authToken', true, {expires: 7});
         commit('authStatusChange', payload);
     },

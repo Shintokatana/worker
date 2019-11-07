@@ -18,7 +18,7 @@
 
     export default {
         name: "usersTable",
-        props: ['users', 'columns'],
+        props: ['users', 'columns', 'userType'],
         components: {
             modalView
         },
@@ -26,7 +26,7 @@
             return {
                 options: tableOptions,
                 modalView: false,
-                deleteUserId: 0
+                deleteUserId: 0,
             }
         },
         methods: {

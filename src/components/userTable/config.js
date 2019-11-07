@@ -7,6 +7,7 @@ export default {
 export const tableOptions = {
     resizableColumns: false,
     perPage: 10,
+    perPageValues: [],
     filterable: false,
     highlightMatches: false,
     filterByColumn: false,
@@ -17,7 +18,7 @@ export const tableOptions = {
         delete: false
     },
     pagination: {
-        nav: 'scroll'
+        chunk: 5,
     }
 };
 

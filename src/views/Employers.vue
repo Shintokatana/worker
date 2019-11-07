@@ -1,13 +1,14 @@
 <template>
     <div class="entry-content">
         <h2>{{this.users.length}} Results</h2>
-        <userTable :users="users" :columns="columns"></userTable>
+        <userTable :users="users" :columns="columns" :userType="22"></userTable>
     </div>
 </template>
 
 <script>
     import userTable from '@/components/userTable/index'
     import config, {columns} from '@/components/userTable/config'
+    import axios from 'axios'
 
     export default {
         name: "Employers",
@@ -17,194 +18,13 @@
         data() {
             return {
                 users: [],
-                columns: []
+                columns: columns[config[this.$router.currentRoute.name]],
             }
         },
-        created: function () {
-            this.columns = columns[config[this.$router.currentRoute.name]];
-            //implement api call to fetch users
-            // console.log(config[this.$router.currentRoute.name]);
-            this.users = [
-                {
-                    "id": 1,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "business": "Another One Business Name",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 2,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 3,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 4,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 5,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 6,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 7,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 8,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 9,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 10,
-                    "name": "Testing1",
-                    "business": "Business Name",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 11,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 12,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 13,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 14,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 15,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 16,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 17,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 18,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 19,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 20,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }, {
-                    "id": 21,
-                    "name": "Testing1",
-                    "email": "email1@email.com",
-                    "email_verified_at": null,
-                    "role_id": "3",
-                    "created_at": "2019-10-28 12:49:15",
-                    "updated_at": "2019-10-28 15:13:56"
-                }
-            ]
+        created() {
+            //redo to actual api
+            axios.get('https://raw.githubusercontent.com/Shintokatana/demo/master/employers.json')
+                .then(res => this.users = res.data);
         }
     }
 </script>
