@@ -8,15 +8,13 @@
             <label for="password">
                 <input type="password" id="password" placeholder="Password" v-model="userInfo.password">
             </label>
-            <input type="submit" value="Login" @click.prevent="loginUser">
+            <input type="submit" value="Go" @click.prevent="loginUser">
         </form>
+        <div class="error-message" v-if="errorMessage">{{errorMessage}}</div>
     </div>
 </template>
 
 <script>
-    // import axios from 'axios'
-    // import {workerAPIEndpoints} from '@/config'
-
     export default {
         name: "Login",
         data() {
@@ -25,14 +23,19 @@
                     email: '',
                     password: ''
                 },
+                errorMessage: ''
             }
         },
         methods: {
             loginUser: function () {
-                this.$store.dispatch('loginUser', true)
-                    .then(() => {
-                        this.$router.push('/');
-                    });
+                if (!this.userInfo.email || !this.userInfo.password) {
+                    this.errorMessage = 'Please Fill All required fields'
+                } else {
+                    this.$store.dispatch('loginUser', true)
+                        .then(() => {
+                            this.$router.push('dashboard');
+                        });
+                }
             }
         }
     }
@@ -40,7 +43,21 @@
 
 <style scoped lang="scss">
 
+    .error-message {
+        color: red;
+        text-align: center;
+    }
+
+    .login-page {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
     .login-title {
+        padding: 25px 0;
+        margin: 0;
         text-align: center;
     }
 
@@ -49,6 +66,7 @@
         margin: 0 auto;
 
         input {
+            box-sizing: border-box;
             display: block;
             padding: 10px;
             background-color: #eee;
