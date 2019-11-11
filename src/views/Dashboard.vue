@@ -37,15 +37,22 @@
             navBar,
             dashboardFooter
         },
-        mounted: function () {
-            this.pageTitle = this.$route.name;
+        mounted() {
+            addEventListener('resize', this.navBarVisibilityStatus);
+            this.pageTitle = this.$route.name
         },
-        beforeUpdate: function () {
-            this.pageTitle = this.$route.name;
+        beforeUpdate() {
+            this.pageTitle = this.$route.name
         },
         methods: {
-            expandNavBar: function () {
+            expandNavBar() {
                 this.navBarVisibility = !this.navBarVisibility;
+            },
+            navBarVisibilityStatus() {
+                if (window.innerWidth > 767)
+                    this.navBarVisibility = true;
+                else if (window.innerWidth < 767)
+                    this.navBarVisibility = false
             }
         }
     }
@@ -90,7 +97,7 @@
         &.navBarVisibility {
             .nav-bar-button {
                 left: 180px;
-                    color: #35495e;
+                color: #35495e;
             }
         }
 

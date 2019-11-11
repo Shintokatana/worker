@@ -13,8 +13,6 @@
         name: "nav-bar",
         methods: {
             signOut: function () {
-                // this.$store.commit('authUser', {});
-                // this.$router.push('/login');
                 this.$store.dispatch('logoutUser', false)
                     .then(() => {
                             this.$router.push('/login');

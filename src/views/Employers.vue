@@ -24,7 +24,8 @@
         created() {
             //redo to actual api
             axios.get('https://raw.githubusercontent.com/Shintokatana/demo/master/employers.json')
-                .then(res => this.users = res.data);
+                .then(res => this.users = res.data)
+                .catch(err => console.error(err));
         }
     }
 </script>

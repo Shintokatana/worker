@@ -21,9 +21,10 @@
                 columns: columns[config[this.$router.currentRoute.name]],
             }
         },
-        created: function () {
+        created() {
             axios.get('https://raw.githubusercontent.com/Shintokatana/demo/master/employees.json')
-                .then(res => this.users = res.data);
+                .then(res => this.users = res.data)
+                .catch(err => console.error(err));
             //implement api call to fetch users
             // console.log(config[this.$router.currentRoute.name]);
         }

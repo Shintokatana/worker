@@ -11,7 +11,9 @@ export default {
     },
 
     loginUser({commit}, payload) {
-        //Get token from payload
+        /**
+         * Get token from api call
+         */
         Cookie.set('authToken', true, {expires: 7});
         commit('authStatusChange', payload);
     },
