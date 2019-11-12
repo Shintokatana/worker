@@ -30,6 +30,8 @@
             loginUser: function () {
                 if (!this.userInfo.email || !this.userInfo.password) {
                     this.errorMessage = 'Please Fill All required fields'
+                } else if (this.userInfo.password.length < 3) {
+                    this.errorMessage = 'Password should contain at least 4 characters'
                 } else {
                     this.$store.dispatch('loginUser', true)
                         .then(() => {
@@ -64,6 +66,7 @@
     .login-form {
         max-width: 400px;
         margin: 0 auto;
+        padding: 0 15px;
 
         input {
             box-sizing: border-box;

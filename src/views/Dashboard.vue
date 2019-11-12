@@ -2,17 +2,17 @@
     <div class="dashboard-container" v-bind:class="{navBarVisibility: navBarVisibility}">
         <transition name="fade" mode="out-in">
             <div class="nav-bar" v-show="navBarVisibility">
-                <navBar v-on:toggleNavBar="expandNavBar"/>
+                <TheNavBar v-on:toggleNavBar="expandNavBar"/>
             </div>
         </transition>
         <a href="#" class="nav-bar-button" @click.prevent="expandNavBar">Expand</a>
         <transition name="fade" mode="out-in">
             <div class="content">
-                <dashboardHeader :title="pageTitle"/>
+                <TheDashboardHeader :title="pageTitle"/>
                 <transition name="fade" mode="out-in">
                     <router-view/>
                 </transition>
-                <dashboardFooter/>
+                <TheDashboardFooter/>
             </div>
         </transition>
     </div>
@@ -20,9 +20,9 @@
 
 <script>
     // @ is an alias to /src
-    import dashboardHeader from '@/components/basic/dashboardHeader'
-    import navBar from '@/components/basic/navBar'
-    import dashboardFooter from '@/components/basic/dashboardFooter'
+    import TheDashboardHeader from '@/components/basic/TheDashboardHeader'
+    import TheNavBar from '@/components/basic/TheNavBar'
+    import TheDashboardFooter from '@/components/basic/TheDashboardFooter'
 
     export default {
         name: 'dashboard',
@@ -33,9 +33,9 @@
             }
         },
         components: {
-            dashboardHeader,
-            navBar,
-            dashboardFooter
+            TheDashboardHeader,
+            TheNavBar,
+            TheDashboardFooter
         },
         mounted() {
             addEventListener('resize', this.navBarVisibilityStatus);
@@ -61,11 +61,13 @@
 <style lang="scss" scoped>
 
     .dashboard-container {
+
         display: flex;
         flex-direction: row;
         position: relative;
 
         .nav-bar-button {
+
             position: absolute;
             top: 30px;
             left: 20px;
@@ -80,6 +82,7 @@
         }
 
         .nav-bar {
+
             background-color: #eee;
             flex: 0 1 15%;
             max-width: 15%;
@@ -102,6 +105,7 @@
         }
 
         .content {
+
             flex: 0 1 85%;
             max-width: 85%;
             @media (max-width: 767px) {
@@ -113,12 +117,13 @@
     }
 
     .fade-enter-active, .fade-leave-active {
+
         transition: opacity .5s;
         opacity: 1;
     }
 
-    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
-    {
+    .fade-enter, .fade-leave-to {
+
         opacity: 0;
     }
 

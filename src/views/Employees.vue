@@ -1,7 +1,7 @@
 <template>
     <div class="entry-content">
         <h2>{{this.users.length}} Results</h2>
-        <userTable :users="users" :columns="columns" :userType="11"></userTable>
+        <userTable :users="users" :columns="columns"></userTable>
     </div>
 </template>
 

@@ -5,7 +5,7 @@
                         :options="options">
             <a slot="delete" slot-scope="users" @click.prevent="popupInit(users.row.id)">Delete</a>
         </v-client-table>
-        <modalView v-if="modalView"
+        <ModalView v-if="modalView"
                    :id="deleteUserId"
                    @close="userDelete(deleteUserId)"
                    @closeDelete="userDeleteCancel"/>
@@ -14,13 +14,13 @@
 
 <script>
     import {tableOptions} from '@/components/userTable/config'
-    import modalView from './modalWindow'
+    import ModalView from './ModalWindow'
 
     export default {
         name: "usersTable",
-        props: ['users', 'columns', 'userType'],
+        props: ['users', 'columns'],
         components: {
-            modalView
+            ModalView
         },
         data() {
             return {
