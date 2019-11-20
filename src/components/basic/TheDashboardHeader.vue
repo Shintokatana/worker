@@ -7,7 +7,7 @@
 <script>
     export default {
         name: "dashboardHeader",
-        props: ['title']
+        props: ['title'],
     }
 </script>
 

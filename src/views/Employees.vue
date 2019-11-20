@@ -22,7 +22,7 @@
             }
         },
         created() {
-            axios.get('https://raw.githubusercontent.com/Shintokatana/demo/master/employees.json')
+            axios.post('https://raw.githubusercontent.com/Shintokatana/demo/master/employees.json')
                 .then(res => this.users = res.data)
                 .catch(err => console.error(err));
             //implement api call to fetch users

@@ -19,7 +19,6 @@
 </template>
 
 <script>
-    // @ is an alias to /src
     import TheDashboardHeader from '@/components/basic/TheDashboardHeader'
     import TheNavBar from '@/components/basic/TheNavBar'
     import TheDashboardFooter from '@/components/basic/TheDashboardFooter'
