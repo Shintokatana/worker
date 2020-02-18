@@ -2,11 +2,11 @@
     <div class="entry-content">
         <h2>Users</h2>
         <div class="main-navigation-wrapper">
-            <router-link class="nav-item" to="/employers">
+            <router-link class="nav-item" to="/employer">
                 <div class="navigation-item"></div>
                 Employers
             </router-link>
-            <router-link class="nav-item" to="/employees">
+            <router-link class="nav-item" to="/employee">
                 <div class="navigation-item"></div>
                 Employees
             </router-link>

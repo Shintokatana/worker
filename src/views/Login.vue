@@ -15,32 +15,31 @@
 </template>
 
 <script>
-    export default {
-        name: "Login",
-        data() {
-            return {
-                userInfo: {
-                    email: '',
-                    password: ''
-                },
-                errorMessage: ''
-            }
-        },
-        methods: {
-            loginUser: function () {
-                if (!this.userInfo.email || !this.userInfo.password) {
-                    this.errorMessage = 'Please Fill All required fields'
-                } else if (this.userInfo.password.length < 3) {
-                    this.errorMessage = 'Password should contain at least 4 characters'
-                } else {
-                    this.$store.dispatch('loginUser', true)
-                        .then(() => {
-                            this.$router.push('dashboard');
-                        });
-                }
-            }
-        }
-    }
+	export default {
+		name: "Login",
+		data() {
+			return {
+				userInfo: {
+					email: '',
+					password: ''
+				},
+				errorMessage: ''
+			}
+		},
+		methods: {
+			loginUser: function () {
+				if (!this.userInfo.email || !this.userInfo.password) {
+					this.errorMessage = 'Please Fill All required fields'
+				} else if (this.userInfo.password.length < 3) {
+					this.errorMessage = 'Password should contain at least 4 characters'
+				} else {
+					this.$store.dispatch('loginUser', this.userInfo).catch(() => {
+						this.errorMessage = 'Sign In Failed. Password or Email is invalid.';
+                    })
+				}
+			}
+		}
+	}
 </script>
 
 <style scoped lang="scss">

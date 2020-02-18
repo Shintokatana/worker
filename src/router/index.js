@@ -25,13 +25,13 @@ let routes = [
                 component: MainView
             },
             {
-                path: '/employers',
-                name: 'employers',
+                path: '/employer',
+                name: 'employer',
                 component: Employers
             },
             {
-                path: '/employees',
-                name: 'employees',
+                path: '/employee',
+                name: 'employee',
                 component: Employees
             }
         ],

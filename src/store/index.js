@@ -18,7 +18,8 @@ export default new Vuex.Store({
     state: {
         user: {},
         isAuth: Cookie.get('authToken'),
-        users: {}
+        users: {},
+		token: Cookie.get('authToken')
     },
     mutations: mutations,
     actions: actions,

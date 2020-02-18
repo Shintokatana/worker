@@ -16,18 +16,18 @@
 </template>
 
 <script>
-    export default {
-        name: "modalWindow",
-        props: ['id'],
-        methods: {
-            deleteUser: function () {
-                this.$emit('close')
-            },
-            closeModal: function () {
-                this.$emit('closeDelete')
-            }
-        }
-    }
+	export default {
+		name: "modalWindow",
+		props: ['id'],
+		methods: {
+			deleteUser: function () {
+				this.$emit('close')
+			},
+			closeModal: function () {
+				this.$emit('closeDelete')
+			}
+		}
+	}
 </script>
 
 <style scoped lang="scss">
