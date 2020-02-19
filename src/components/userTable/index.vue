@@ -77,8 +77,8 @@
 					let newUserList = [];
 					res.data.data.map(item => {
 						item.name = `${item.first_name && item.first_name} ${item.last_name && item.last_name}`;
-						item.category = item.category.name;
-						item.business = item.business_name;
+						item.category = item.category && item.category.name;
+						item.business = item.business_name && item.business_name;
 						newUserList.push(item);
 					});
 					this.total = res.data.total;

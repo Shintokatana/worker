@@ -1,1 +1,1 @@
-export default {	basicUrl: 'http://157.230.97.70/api'};
+export default {	basicUrl: '/api'};
