@@ -33,7 +33,11 @@
 				} else if (this.userInfo.password.length < 3) {
 					this.errorMessage = 'Password should contain at least 4 characters'
 				} else {
-					this.$store.dispatch('loginUser', this.userInfo).catch(() => {
+					this.$store.dispatch('loginUser', this.userInfo)
+                        .then(res => {
+                                res.error ? this.errorMessage = res.errorMessage : null;
+                        })
+                        .catch(() => {
 						this.errorMessage = 'Sign In Failed. Password or Email is invalid.';
                     })
 				}

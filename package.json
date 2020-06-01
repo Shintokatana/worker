@@ -33,9 +33,6 @@
     "sw-precache-webpack-plugin": "^0.11.5",
     "vue-template-compiler": "^2.6.10"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
     "*.{js,vue}": [
       "vue-cli-service lint",

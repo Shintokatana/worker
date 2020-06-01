@@ -6,6 +6,7 @@
 
 <script>
 	import userTable from '@/components/userTable/index'
+
 	export default {
 		name: "Employers",
 		components: {

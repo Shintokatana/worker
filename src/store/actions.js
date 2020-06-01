@@ -19,9 +19,16 @@ export default {
 			password: payload.password
 		}).then(res => {
 			if (200 === res.status) {
-				Cookie.set('authToken', res.data['access_token'].token, {expires: 7});
-				commit('authStatusChange', true);
-				router.push('dashboard');
+				if (res.data.user.roles[0].id ===1) {
+					Cookie.set('authToken', res.data['access_token'].token, {expires: 7});
+					commit('authStatusChange', true);
+					router.push('dashboard');
+				} else {
+					return {
+						errorMessage: 'You are not allowed to login here. Please try again',
+						error: true
+					};
+				}
 			}
 		})
 	},
