@@ -7,6 +7,7 @@ import store from '@/store'
 import MainView from '@/views/MainView'
 import Employers from '@/views/Employers'
 import Employees from '@/views/Employees'
+import CreateUsers from "@/views/CreateUsers";
 
 Vue.use(VueRouter);
 
@@ -26,13 +27,18 @@ let routes = [
             },
             {
                 path: '/employer',
-                name: 'employer',
+                name: 'Employers',
                 component: Employers
             },
             {
                 path: '/employee',
-                name: 'employee',
+                name: 'Employees',
                 component: Employees
+            },
+            {
+                path: '/test-users',
+                name: 'Test Users',
+                component: CreateUsers
             }
         ],
         beforeEnter: (to, from, next) => {

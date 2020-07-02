@@ -1,9 +1,10 @@
 <template>
     <div class="navigation">
-        <router-link to="/" class="home-navigation" @click.native="toggleBar"><h2>Worker</h2></router-link>
+        <router-link to="/" class="home-navigation" @click.native="toggleBar"><h2>Getwork</h2></router-link>
         <h4 class="navigation-title">Menu</h4>
         <router-link class="nav-item" to="/employer" @click.native="toggleBar">Employers</router-link>
         <router-link class="nav-item" to="/employee" @click.native="toggleBar">Employees</router-link>
+        <router-link class="nav-item" to="/test-users" @click.native="toggleBar">Test Users</router-link>
         <a href="#" class="nav-item" @click.prevent="signOut">Sign Out</a>
     </div>
 </template>

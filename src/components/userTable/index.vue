@@ -54,12 +54,12 @@
 			}
 		},
 		mounted() {
-			if ('employee' === this.$router.currentRoute.name)
+			if ('employee' === this.$router.currentRoute.path.replace('/', ''))
 				this.columnsOptions = columns[1];
-			if ('employer' === this.$router.currentRoute.name)
+			if ('employer' === this.$router.currentRoute.path.replace('/', ''))
 				this.columnsOptions = columns[2];
 
-			this.prefix = this.$router.currentRoute.name;
+			this.prefix = this.$router.currentRoute.path.replace('/', '');
 			this.fetchUsers();
 		},
 		methods: {

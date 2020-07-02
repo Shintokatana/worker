@@ -10,6 +10,10 @@
                 <div class="navigation-item"></div>
                 Employees
             </router-link>
+            <router-link class="nav-item" to="/test-users">
+                <div class="navigation-item"></div>
+                Test Users
+            </router-link>
         </div>
     </div>
 </template>

@@ -6,7 +6,6 @@ import api from '@/api';
 export default {
 
 	logoutUser({commit}, payload) {
-		//logout api request
 		if (Cookie.get('authToken')) {
 			Cookie.remove('authToken');
 		}
@@ -25,7 +24,7 @@ export default {
 					router.push('dashboard');
 				} else {
 					return {
-						errorMessage: 'You are not allowed to login here. Please try again',
+						errorMessage: 'You are not allowed to login here',
 						error: true
 					};
 				}

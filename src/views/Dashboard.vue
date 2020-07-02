@@ -104,7 +104,7 @@
         }
 
         .content {
-
+            position: relative;
             flex: 0 1 85%;
             max-width: 85%;
             @media (max-width: 767px) {
